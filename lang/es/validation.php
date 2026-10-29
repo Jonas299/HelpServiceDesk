@@ -1,0 +1,40 @@
+<?php
+
+return [
+    'date_format' => 'El campo :attribute debe usar el formato :format.',
+    'after_or_equal' => 'El campo :attribute debe ser igual o posterior a :date.',
+    'date' => 'El campo :attribute debe ser una fecha válida.',
+    'required' => 'El campo :attribute es obligatorio.',
+    'required_if' => 'El campo :attribute es obligatorio cuando :other es :value.',
+    'string' => 'El campo :attribute debe ser un texto.',
+    'email' => 'El campo :attribute debe ser un correo válido.',
+    'boolean' => 'El campo :attribute debe ser verdadero o falso.',
+    'integer' => 'El campo :attribute debe ser un número entero.',
+    'enum' => 'El valor seleccionado para :attribute no es válido.',
+    'exists' => 'El valor seleccionado para :attribute no está disponible.',
+    'unique' => 'El valor de :attribute ya está registrado.',
+    'file' => 'El campo :attribute debe ser un archivo válido.',
+    'uploaded' => 'No se pudo cargar el archivo :attribute.',
+    'mimes' => 'El archivo :attribute debe ser de tipo: :values.',
+    'mimetypes' => 'El archivo :attribute debe ser de tipo: :values.',
+    'extensions' => 'El archivo :attribute debe tener una de estas extensiones: :values.',
+    'max' => [
+        'string' => 'El campo :attribute no puede superar :max caracteres.',
+        'file' => 'El archivo :attribute no puede superar :max KB.',
+        'numeric' => 'El campo :attribute no puede ser mayor que :max.',
+        'array' => 'El campo :attribute no puede tener más de :max elementos.',
+    ],
+    'min' => [
+        'string' => 'El campo :attribute debe tener al menos :min caracteres.',
+        'file' => 'El archivo :attribute debe tener al menos :min KB.',
+        'numeric' => 'El campo :attribute debe ser al menos :min.',
+        'array' => 'El campo :attribute debe tener al menos :min elementos.',
+    ],
+    'attributes' => [
+        'from' => 'desde', 'until' => 'hasta', 'name' => 'nombre', 'email' => 'correo', 'password' => 'contraseña',
+        'company_id' => 'empresa', 'role' => 'rol', 'active' => 'activo',
+        'subject' => 'asunto', 'description' => 'descripción', 'category_id' => 'categoría',
+        'priority' => 'prioridad', 'status' => 'estado', 'reason' => 'justificación',
+        'contact_phone' => 'número de contacto', 'body' => 'comentario', 'file' => 'archivo', 'assigned_to' => 'agente',
+    ],
+];

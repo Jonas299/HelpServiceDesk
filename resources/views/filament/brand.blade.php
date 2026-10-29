@@ -1,0 +1,1 @@
+<span class="desk-brand"><span class="desk-brand-mark"><x-filament::icon icon="heroicon-o-ticket" /></span><span>helpdesk<span class="desk-brand-dot">.</span><small>SERVICE CENTER</small></span></span>

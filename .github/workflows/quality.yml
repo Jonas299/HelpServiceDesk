@@ -1,0 +1,28 @@
+name: Quality
+on:
+  push:
+  pull_request:
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Configure local CI environment
+        run: |
+          cp .env.example .env
+          echo "DB_PASSWORD=$(openssl rand -hex 24)" >> .env
+      - name: Build PHP and start dependencies
+        run: docker compose build app
+      - name: Install locked dependencies
+        run: docker compose run --rm app composer install --no-interaction --prefer-dist
+      - name: Generate application key
+        run: docker compose run --rm app php artisan key:generate
+      - name: Check format
+        run: docker compose run --rm app vendor/bin/pint --test
+      - name: Static analysis
+        run: docker compose run --rm app vendor/bin/phpstan analyse --no-progress --memory-limit=512M
+      - name: PostgreSQL integration and concurrency tests
+        run: docker compose run --rm app php artisan test
+      - name: Stop services
+        if: always()
+        run: docker compose down
